@@ -9,15 +9,12 @@ import { FormsModule } from '@angular/forms';
   template: `
     <footer class="site-footer">
       <div class="footer-top-container">
-        <!-- Newsletter Section -->
         <div class="footer-newsletter-col">
           <span class="footer-brand-title">AuraStore Audio</span>
-          <!-- WCAG 1.4.3: Low contrast text (#64748b on #0f172a = ~3.2:1) -->
           <p class="footer-newsletter-desc">
             Subscribe to our weekly audiophile newsletter for insider firmware updates, acoustic engineering papers, and exclusive VIP promotions.
           </p>
 
-          <!-- WCAG 1.3.1 & 3.3.2: Missing <label>; WCAG 1.1.1 & 4.1.2: Button without accessible name -->
           <form class="footer-newsletter-form" (submit)="handleNewsletterSubmit($event)">
             <input
               type="email"
@@ -39,7 +36,6 @@ import { FormsModule } from '@angular/forms';
           }
         </div>
 
-        <!-- Footer Nav Column 1 -->
         <div class="footer-links-col">
           <p class="footer-col-header">Products & Gear</p>
           <ul class="footer-links-list">
@@ -51,27 +47,23 @@ import { FormsModule } from '@angular/forms';
           </ul>
         </div>
 
-        <!-- Footer Nav Column 2 -->
         <div class="footer-links-col">
           <p class="footer-col-header">Support & Service</p>
           <ul class="footer-links-list">
             <li><a href="#warranty" class="footer-link">2-Year Limited Warranty</a></li>
             <li><a href="#shipping" class="footer-link">Free Worldwide Shipping</a></li>
             <li><a href="#firmware" class="footer-link">Firmware Downloads</a></li>
-            <!-- WCAG 2.4.4: Ambiguous links without context -->
             <li><a href="#support" class="footer-link">Support</a></li>
             <li><a href="#contact" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
-        <!-- Footer Nav Column 3 -->
         <div class="footer-links-col">
           <p class="footer-col-header">Company</p>
           <ul class="footer-links-list">
             <li><a href="#about" class="footer-link">Acoustic Lab Heritage</a></li>
             <li><a href="#sustainability" class="footer-link">Carbon Neutral Packaging</a></li>
             <li><a href="#careers" class="footer-link">Careers in Audio Engineering</a></li>
-            <!-- WCAG 2.4.4: Ambiguous links -->
             <li><a href="#privacy" class="footer-link">Privacy</a></li>
             <li><a href="#terms" class="footer-link">Terms</a></li>
           </ul>
@@ -80,14 +72,11 @@ import { FormsModule } from '@angular/forms';
 
       <hr class="footer-divider" />
 
-      <!-- Footer Bottom Row -->
       <div class="footer-bottom-container">
-        <!-- WCAG 1.4.3: Low contrast copyright text (#475569 on #0f172a = ~2.8:1) -->
         <p class="footer-copyright-text">
           © 2026 AuraStore Audio Labs Inc. All rights reserved. Precision crafted in California.
         </p>
 
-        <!-- Currency / Region Selector - WCAG 2.1.1: Hover-only dropdown -->
         <div class="region-selector-box">
           <span class="region-current">🇺🇸 USD ($) ▾</span>
           <div class="region-dropdown-menu">
@@ -98,7 +87,6 @@ import { FormsModule } from '@angular/forms';
           </div>
         </div>
 
-        <!-- Social Icons - WCAG 1.1.1 & 4.1.2: Empty links containing only SVGs -->
         <div class="footer-social-row">
           <a href="#" class="social-icon-link">
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">

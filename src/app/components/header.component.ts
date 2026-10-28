@@ -8,13 +8,11 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
   template: `
     <header class="site-header">
-      <!-- WCAG 2.4.1 Broken Bypass Link -->
       <a href="#missing-main-target" class="skip-navigation-link">
         Skip to main content
       </a>
 
-      <!-- WCAG 2.2.2 & 1.4.3: Auto-moving ticker with no pause/stop & Low contrast text -->
-      <div class="promo-ticker-bar">
+      <div className="promo-ticker-bar">
         <div class="ticker-track">
           <span class="ticker-item">
             ⚡ FLASH SALE: 20% OFF ALL AUDIO GEAR WITH CODE A11Y20 • FREE 2-DAY EXPRESS SHIPPING OVER $50 • 30-DAY HASSLE-FREE TRIAL
@@ -25,9 +23,7 @@ import { FormsModule } from '@angular/forms';
         </div>
       </div>
 
-      <!-- Main Navbar -->
       <div class="navbar-container">
-        <!-- Brand Logo - WCAG 1.1.1: Missing descriptive alt text (uses generic 'image') -->
         <div class="nav-brand">
           <a href="#" class="brand-logo-link">
             <span class="brand-logo-icon">🎧</span>
@@ -35,7 +31,6 @@ import { FormsModule } from '@angular/forms';
           </a>
         </div>
 
-        <!-- Search Bar - WCAG 1.3.1 & 3.3.2: Missing <label> (placeholder only); WCAG 1.1.1 & 4.1.2: Button without accessible name -->
         <div class="nav-search-wrapper">
           <form class="nav-search-form" (submit)="$event.preventDefault()">
             <input
@@ -54,7 +49,6 @@ import { FormsModule } from '@angular/forms';
           </form>
         </div>
 
-        <!-- Navigation Links - WCAG 2.1.1: Dropdown menu only triggers on CSS :hover -->
         <nav class="nav-menu">
           <a href="#new" class="nav-link">New Releases</a>
           <a href="#audio" class="nav-link active">Headphones</a>
@@ -73,9 +67,7 @@ import { FormsModule } from '@angular/forms';
           <a href="#support" class="nav-link">Support</a>
         </nav>
 
-        <!-- Action Buttons - WCAG 1.1.1 & 4.1.2: Icon buttons without aria-label -->
         <div class="nav-actions">
-          <!-- Wishlist Button -->
           <button type="button" class="action-icon-btn">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -83,7 +75,6 @@ import { FormsModule } from '@angular/forms';
             <span class="badge-count">2</span>
           </button>
 
-          <!-- Cart Button -->
           <button type="button" class="action-icon-btn">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
               <circle cx="9" cy="21" r="1"></circle>
@@ -93,7 +84,6 @@ import { FormsModule } from '@angular/forms';
             <span class="badge-count">{{ cartCount() }}</span>
           </button>
 
-          <!-- User Profile Avatar - WCAG 4.1.2 & 2.1.1: Clickable div without role="button" or tabindex="0" -->
           <div class="user-profile-avatar">
             <span>JD</span>
           </div>
