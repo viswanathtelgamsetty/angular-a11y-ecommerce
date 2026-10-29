@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
         Skip to main content
       </a>
 
-      <div className="promo-ticker-bar">
+      <div class="promo-ticker-bar">
         <div class="ticker-track">
           <span class="ticker-item">
             ⚡ FLASH SALE: 20% OFF ALL AUDIO GEAR WITH CODE A11Y20 • FREE 2-DAY EXPRESS SHIPPING OVER $50 • 30-DAY HASSLE-FREE TRIAL
@@ -33,14 +33,8 @@ import { FormsModule } from '@angular/forms';
 
         <div class="nav-search-wrapper">
           <form class="nav-search-form" (submit)="$event.preventDefault()">
-            <input
-              type="text"
-              class="nav-search-input"
-              placeholder="Search audio, high-res gear, accessories..."
-              [(ngModel)]="searchVal"
-              name="search"
-            />
-            <button type="submit" class="nav-search-btn">
+            <input type="text" class="nav-search-input" placeholder="Search audio, high-res gear, accessories..." [(ngModel)]="searchVal" name="search" aria-label="Search" />
+            <button type="submit" class="nav-search-btn" aria-label="Nav Search">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -51,7 +45,7 @@ import { FormsModule } from '@angular/forms';
 
         <nav class="nav-menu">
           <a href="#new" class="nav-link">New Releases</a>
-          <a href="#audio" class="nav-link active">Headphones</a>
+          <a href="#missing-main-target" class="skip-navigation-link" aria-label="Skip Navigation Link">Headphones</a>
           
           <div class="nav-dropdown">
             <span class="nav-link dropdown-toggle">Categories ▾</span>

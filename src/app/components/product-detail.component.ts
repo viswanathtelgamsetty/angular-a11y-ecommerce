@@ -31,11 +31,8 @@ import { FormsModule } from '@angular/forms';
 
           <div class="thumbnails-row">
             @for (img of productData.images; track $index) {
-              <div
-                [class]="'thumb-wrapper ' + (selectedImage === img ? 'thumb-active' : '')"
-                (click)="selectedImage = img"
-              >
-                <img [src]="img" class="thumbnail-img" />
+              <div [class]="'thumb-wrapper ' + (selectedImage === img ? 'thumb-active' : '')" (click)="selectedImage = img" (keydown.enter)="selectedImage = img" (keydown.space)="$event.preventDefault(); selectedImage = img" tabindex="0" role="button">
+                <img [src]="img" class="thumbnail-img" alt="Thumbnail" />
               </div>
             }
           </div>
@@ -68,11 +65,7 @@ import { FormsModule } from '@angular/forms';
             <div class="section-label">Color: {{ selectedColor }}</div>
             <div class="swatches-list">
               @for (c of productData.colors; track c.name) {
-                <div
-                  [class]="'color-swatch ' + (selectedColor === c.name ? 'swatch-selected' : '')"
-                  [style.background-color]="c.hex"
-                  (click)="selectedColor = c.name"
-                ></div>
+                <div [class]="'color-swatch ' + (selectedColor === c.name ? 'swatch-selected' : '')" [style.background-color]="c.hex" (click)="selectedColor = c.name"></div>
               }
             </div>
           </div>
@@ -110,25 +103,13 @@ import { FormsModule } from '@angular/forms';
 
       <div class="product-tabs-wrapper">
         <div class="tabs-nav-bar">
-          <a
-            href="#overview"
-            [class]="'tab-btn ' + (activeTab === 'overview' ? 'active' : '')"
-            (click)="$event.preventDefault(); activeTab = 'overview'"
-          >
+          <a href="#overview" [class]="'tab-btn ' + (activeTab === 'overview' ? 'active' : '')" (click)="$event.preventDefault(); activeTab = 'overview'">
             Overview & Features
           </a>
-          <a
-            href="#specs"
-            [class]="'tab-btn ' + (activeTab === 'specs' ? 'active' : '')"
-            (click)="$event.preventDefault(); activeTab = 'specs'"
-          >
+          <a href="#specs" [class]="'tab-btn ' + (activeTab === 'specs' ? 'active' : '')" (click)="$event.preventDefault(); activeTab = 'specs'">
             Technical Specifications
           </a>
-          <a
-            href="#reviews"
-            [class]="'tab-btn ' + (activeTab === 'reviews' ? 'active' : '')"
-            (click)="$event.preventDefault(); activeTab = 'reviews'"
-          >
+          <a href="#reviews" [class]="'tab-btn ' + (activeTab === 'reviews' ? 'active' : '')" (click)="$event.preventDefault(); activeTab = 'reviews'">
             Customer Reviews ({{ productData.reviewCount }})
           </a>
         </div>
@@ -178,11 +159,7 @@ import { FormsModule } from '@angular/forms';
                 <h3 class="tab-heading">Verified Buyer Testimonials</h3>
                 <p class="reviews-sub">Average Rating: 4.8 / 5.0 based on 128 verified purchases</p>
               </div>
-              <button
-                type="button"
-                class="btn-secondary-action"
-                (click)="isModalOpen = true"
-              >
+              <button type="button" class="btn-secondary-action" (click)="isModalOpen = true">
                 Write a Review
               </button>
             </div>
@@ -222,41 +199,19 @@ import { FormsModule } from '@angular/forms';
             } @else {
               <form class="modal-form" (submit)="handleReviewSubmit($event)">
                 <div class="modal-field">
-                  <input
-                    type="text"
-                    [class]="'modal-input ' + (formErrors && !reviewerName.trim() ? 'input-error' : '')"
-                    placeholder="Your Full Name *"
-                    [(ngModel)]="reviewerName"
-                    name="name"
-                  />
+                  <input type="text" [class]="'modal-input ' + (formErrors && !reviewerName.trim() ? 'input-error' : '')" placeholder="Your Full Name *" [(ngModel)]="reviewerName" name="name" aria-label="Name" />
                 </div>
 
                 <div class="modal-field">
-                  <input
-                    type="email"
-                    [class]="'modal-input ' + (formErrors && !reviewerEmail.trim() ? 'input-error' : '')"
-                    placeholder="Your Email Address *"
-                    [(ngModel)]="reviewerEmail"
-                    name="email"
-                  />
+                  <input type="email" [class]="'modal-input ' + (formErrors && !reviewerEmail.trim() ? 'input-error' : '')" placeholder="Your Email Address *" [(ngModel)]="reviewerEmail" name="email" aria-label="Email" />
                 </div>
 
                 <div class="modal-field">
-                  <textarea
-                    rows="4"
-                    [class]="'modal-textarea ' + (formErrors && !reviewText.trim() ? 'input-error' : '')"
-                    placeholder="Share your thoughts on sound quality, comfort, and battery life... *"
-                    [(ngModel)]="reviewText"
-                    name="review"
-                  ></textarea>
+                  <textarea rows="4" [class]="'modal-textarea ' + (formErrors && !reviewText.trim() ? 'input-error' : '')" placeholder="Share your thoughts on sound quality, comfort, and battery life... *" [(ngModel)]="reviewText" name="review" aria-label="Review"></textarea>
                 </div>
 
                 <div class="modal-actions-row">
-                  <button
-                    type="button"
-                    class="btn-modal-cancel"
-                    (click)="isModalOpen = false"
-                  >
+                  <button type="button" class="btn-modal-cancel" (click)="isModalOpen = false">
                     Cancel
                   </button>
                   <button type="submit" class="btn-modal-submit">
