@@ -43,7 +43,7 @@ import { FormsModule } from '@angular/forms';
 
         <div class="product-info-col">
           <h1 class="product-title">{{ productData.name }}</h1>
-          <h4 class="product-tagline">{{ productData.tagline }}</h4>
+          <h2 class="product-tagline">{{ productData.tagline }}</h2>
 
           <div class="rating-container">
             <span class="rating-stars">★★★★☆</span>

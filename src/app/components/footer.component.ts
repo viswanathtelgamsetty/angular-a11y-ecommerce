@@ -16,14 +16,8 @@ import { FormsModule } from '@angular/forms';
           </p>
 
           <form class="footer-newsletter-form" (submit)="handleNewsletterSubmit($event)">
-            <input
-              type="email"
-              class="footer-email-input"
-              placeholder="Enter your email address..."
-              [(ngModel)]="newsletterEmail"
-              name="newsletter"
-            />
-            <button type="submit" class="footer-submit-btn">
+            <input type="email" class="footer-email-input" placeholder="Enter your email address..." [(ngModel)]="newsletterEmail" name="newsletter" aria-label="Newsletter" />
+            <button type="submit" class="footer-submit-btn" aria-label="Footer Submit">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -39,8 +33,8 @@ import { FormsModule } from '@angular/forms';
         <div class="footer-links-col">
           <p class="footer-col-header">Products & Gear</p>
           <ul class="footer-links-list">
-            <li><a href="#wireless" class="footer-link">Wireless Headphones</a></li>
-            <li><a href="#earbuds" class="footer-link">Active Noise Cancelling</a></li>
+            <li><a href="#wireless" class="footer-link" aria-label="Footer Link">Wireless Headphones</a></li>
+            <li><a href="#earbuds" class="footer-link" aria-label="Footer Link">Active Noise Cancelling</a></li>
             <li><a href="#dacs" class="footer-link">Studio Reference DACs</a></li>
             <li><a href="#cables" class="footer-link">Audiophile Cables</a></li>
             <li><a href="#cases" class="footer-link">Hard Shell Travel Cases</a></li>
@@ -50,7 +44,7 @@ import { FormsModule } from '@angular/forms';
         <div class="footer-links-col">
           <p class="footer-col-header">Support & Service</p>
           <ul class="footer-links-list">
-            <li><a href="#warranty" class="footer-link">2-Year Limited Warranty</a></li>
+            <li><a href="#warranty" class="footer-link" aria-label="Remove">2-Year Limited Warranty</a></li>
             <li><a href="#shipping" class="footer-link">Free Worldwide Shipping</a></li>
             <li><a href="#firmware" class="footer-link">Firmware Downloads</a></li>
             <li><a href="#support" class="footer-link">Support</a></li>
